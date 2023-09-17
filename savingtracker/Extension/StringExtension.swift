@@ -36,5 +36,10 @@ extension String {
         return yearFormatter.string(from: date)
     }
     
-    
+    func toDate() -> Date? {
+        let dateFomatter = DateFormatter()
+        dateFomatter.dateFormat = "yyyy-MM-dd"
+        let date = dateFomatter.date(from: self)
+        return date
+    }
 }

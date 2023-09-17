@@ -1,72 +1,78 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  savingtracker
 //
-//  Created by Wai Thura Tun on 06/09/2023.
+//  Created by Wai Thura Tun on 15/09/2023.
 //
 
 import UIKit
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet weak var currentSavingLabel: UILabel!
-    @IBOutlet weak var currentIncomeLabel: UILabel!
-    @IBOutlet weak var currentExpenseLabel: UILabel!
+    @IBOutlet weak var savingView: UIView!
+    @IBOutlet weak var savingAmountLabel: UILabel!
+    @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var categoriesPicker: UIPickerView!
+    @IBOutlet weak var amountTextField: UITextField!
     
-    @IBOutlet weak var savingBtn: UIButton!
-    @IBOutlet weak var incomeBtn: UIButton!
-    @IBOutlet weak var expenseBtn: UIButton!
-    @IBOutlet weak var categoryBtn: UIButton!
-    
+    var categories: [Category] = []
     var tracker: Tracker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         tracker = Tracker()
+        categories = tracker.getCategories()
+        categoriesPicker.dataSource = self
+        categoriesPicker.delegate = self
+        amountTextField.delegate = self
         setUp()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        updateUI()
+        updateSavings()
     }
     
     func setUp() {
-        configureBtn(savingBtn)
-        configureBtn(incomeBtn)
-        configureBtn(expenseBtn)
-        configureBtn(categoryBtn)
+        saveBtn.layer.cornerRadius = 10
+        savingView.layer.cornerRadius = 10
+        savingView.layer.shadowColor = UIColor.gray.cgColor
+        savingView.layer.shadowOpacity = 0.7
+        savingView.layer.shadowRadius = 5
+        savingView.layer.shadowOffset = CGSize(width: 2, height: 0)
+        savingView.layer.shadowPath = nil
     }
     
-    func updateUI() {
-        let (saving,income,expense) = tracker.getCurrentRecords()
-        currentSavingLabel.text = String(saving)
-        currentIncomeLabel.text = String(income)
-        currentExpenseLabel.text = String(expense)
+    func updateSavings() {
+        let (saving, _, _) = tracker.getCurrentRecords()
+        savingAmountLabel.text = String(saving)
     }
     
-    func configureBtn(_ sender: UIButton) {
-        sender.layer.cornerRadius = 5.0
-        sender.layer.shadowColor = UIColor.gray.cgColor
-        sender.layer.shadowOffset = CGSize(width: 0, height: 5)
-        sender.layer.shadowOpacity = 0.7
-        sender.layer.shadowRadius = 10
-        sender.layer.shadowPath = nil
-    }
-
-    @IBAction func clickSavings(_ sender: UIButton) {
-        goToSaving()
+    @IBAction func increaseAmount(_ sender: UIButton) {
+        increaseAmount()
     }
     
-    @IBAction func clickIncomes(_ sender: UIButton) {
-        goToIncome()
+    @IBAction func decreaseAmount(_ sender: UIButton) {
+        decreaseAmount()
     }
     
-    @IBAction func clickExpenses(_ sender: UIButton) {
-        goToExpense()
+    @IBAction func saveExpense(_ sender: UIButton) {
+        let selectPickerId = categoriesPicker.selectedRow(inComponent: 0)
+        let category_id = categories[selectPickerId].id
+        let amount = Double(amountTextField.text ?? "") ?? 0.0
+        let date = Date()
+        let type = RecordType.expense
+        if amount > 0 {
+            let result = tracker.createRecord(category_id: category_id, amount: amount, description: "", type: type, date: date.toString())
+            if result {
+                alertAfterSave()
+                amountTextField.text = String(1000)
+                updateSavings()
+            }
+        }
     }
     
-    @IBAction func clickCategories(_ sender: UIButton) {
-        goToCategory()
+    func alertAfterSave() {
+        let finishAlertController = UIAlertController(title: "Save Expense", message: "Expense has been saved successfully.", preferredStyle: .alert)
+        let finishAction = UIAlertAction(title: "Ok", style: .default)
+        finishAlertController.addAction(finishAction)
+        present(finishAlertController, animated: true)
     }
 }
-

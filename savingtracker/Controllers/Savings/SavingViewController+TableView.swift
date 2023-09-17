@@ -26,6 +26,7 @@ extension SavingViewController: UITableViewDataSource, UITableViewDelegate {
             let month = [String](savings.keys)[indexPath.row]
             if let amount = savings[month] {
                 cell.configure(month: month, amount: amount)
+                cell.selectionStyle = .none
             }
         }
         return cell

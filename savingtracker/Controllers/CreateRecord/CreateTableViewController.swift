@@ -14,6 +14,7 @@ class CreateTableViewController: UITableViewController {
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var amountTextField: UITextField!
     
+    weak var delegate: UpdateTableViewProtocol?
     var tracker: Tracker!
     var categories: [Category] = []
     var type: RecordType?
@@ -30,6 +31,23 @@ class CreateTableViewController: UITableViewController {
         amountTextField.delegate = self
         
         amountTextField.keyboardType = .numberPad
+        updateUI()
+    }
+    
+    func updateUI() {
+        if let id = delegate?.selectedId {
+            let record = tracker.getRecordById(id: id)
+            amountTextField.text = String(record.amount)
+            descriptionTextField.text = record.description
+            type = record.type
+            let index = categories.firstIndex { category in
+                category.name == record.categoryName
+            }
+            categoryPickerView.selectRow(index ?? 0, inComponent: 0, animated: true)
+            if let date = record.date.toDate() {
+                datePicker.setDate(date, animated: true)
+            }
+        }
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
@@ -46,14 +64,7 @@ class CreateTableViewController: UITableViewController {
             let amount: Double = Double(amountString) ?? 0.0
             let result = tracker.createRecord(category_id: category_id, amount: amount, description: description, type: type, date: date.toString())
             if result {
-                if let navVC = presentingViewController as? UINavigationController {
-                    if let incomeVC = navVC.topViewController as? IncomeViewController {
-                        incomeVC.updateIncome()
-                    }
-                    else if let expenseVC = navVC.topViewController as? ExpenseViewController {
-                        expenseVC.updateExpense()
-                    }
-                }
+                delegate?.updateTableView()
             }
             self.dismiss(animated: true)
         }

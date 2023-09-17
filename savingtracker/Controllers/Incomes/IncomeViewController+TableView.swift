@@ -43,6 +43,13 @@ extension IncomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sectionKey = [String](incomeSection.keys)[indexPath.section]
+        if let incomes = incomeSection[sectionKey] {
+            self.selectedId = incomes[indexPath.row].id
+        }
+    }
+    
     func alertBeforeDelete(indexPath: IndexPath) {
         let deleteAlertController = UIAlertController(title: "Delete Income", message: "Are you sure to delete the income record", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .default)
@@ -51,7 +58,7 @@ extension IncomeViewController: UITableViewDelegate, UITableViewDataSource {
             if let incomes = self.incomeSection[sectionKey] {
                 let result = self.tracker.deleteRecord(id: incomes[indexPath.row].id)
                 if result {
-                    self.updateIncome()
+                    self.updateTableView()
                 }
             }
         }

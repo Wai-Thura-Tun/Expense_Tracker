@@ -7,13 +7,14 @@
 
 import UIKit
 
-class IncomeViewController: UIViewController {
+class IncomeViewController: UIViewController, UpdateTableViewProtocol {
     
     @IBOutlet weak var incomeTableView: UITableView!
 
     var incomes: [Record] = []
     var incomeSection: [String : [Record]] = [:]
     var tracker: Tracker!
+    var selectedId: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +29,14 @@ class IncomeViewController: UIViewController {
         incomeTableView.reloadData()
     }
     
-    func updateIncome() {
-        incomeSection.removeAll()
+    func updateTableView() {
         incomes = tracker.getIncomes()
         reformatData()
         incomeTableView.reloadData()
     }
     
     func reformatData() {
+        incomeSection.removeAll()
         for income in incomes {
             let year = income.date.getYear()
             let month = income.date.getMonth()
@@ -58,6 +59,7 @@ class IncomeViewController: UIViewController {
             let navVC = segue.destination as! UINavigationController
             if let vc = navVC.topViewController as? CreateTableViewController {
                 vc.type = RecordType.income
+                vc.delegate = self
             }
         }
     }

@@ -11,11 +11,19 @@ class CreateCategoryTableViewController: UITableViewController {
 
     @IBOutlet weak var nameTextField: UITextField!
     
+    weak var delegate:UpdateTableViewProtocol?
     var tracker: Tracker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tracker = Tracker()
+        updateUI()
+    }
+    
+    func updateUI() {
+        if let id = delegate?.selectedId {
+            nameTextField.text = tracker.getCateogryByID(id: id).name
+        }
     }
 
     @IBAction func cancel(_ sender: UIBarButtonItem) {
@@ -24,13 +32,16 @@ class CreateCategoryTableViewController: UITableViewController {
     
     @IBAction func done(_ sender: UIBarButtonItem) {
         if nameTextField.text != nil && nameTextField.text != "" {
-            let result = tracker.createCategory(name: nameTextField.text!)
+            var result: Bool = false
+            if let id = delegate?.selectedId {
+                result = tracker.updateCategory(id: id, name: nameTextField.text!)
+            }
+            else {
+                result = tracker.createCategory(name: nameTextField.text!)
+            }
+            
             if result {
-                let navVC = presentingViewController as! UINavigationController
-                if let categoryVC = navVC.topViewController as? CategoryViewController {
-                    categoryVC.updateTableView()
-                }
-                
+                delegate?.updateTableView()
             }
             self.dismiss(animated: true)
         }

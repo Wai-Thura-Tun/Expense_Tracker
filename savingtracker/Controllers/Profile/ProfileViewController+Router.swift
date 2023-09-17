@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension HomeViewController {
+extension ProfileViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {

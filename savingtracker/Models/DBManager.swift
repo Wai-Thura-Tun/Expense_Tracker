@@ -43,6 +43,18 @@ class DBManager {
         return result
     }
     
+    public func fetchRecordById(id: Int) -> [String:Any]? {
+        let query = "SELECT r.*, c.id as category_id, c.name as category_name FROM records r INNER JOIN categories c ON c.id = r.category_id WHERE r.id='\(id)'"
+        let result = _db.query(sql: query)
+        return result.first
+    }
+    
+    public func updateRecord(id: Int, category_id: Int,amount: Double, descrip: String, type: RecordType, date: String) -> Bool {
+        let query = "UPDATE records SET category_id='\(category_id)',amount='\(amount)',description='\(descrip)',date='\(date)',type='\(type)' WHERE id='\(id)'"
+        let result = _db.execute(sql: query)
+        return result != 0
+    }
+    
     public func fetchCategories() -> [[String: Any]] {
         let query = "SELECT * FROM categories";
         let result = _db.query(sql: query)
@@ -63,6 +75,12 @@ class DBManager {
     
     public func deleteCategory(id: Int) -> Bool {
         let query = "DELETE FROM categories WHERE id='\(id)'"
+        let result = _db.execute(sql: query)
+        return result != 0
+    }
+    
+    public func updateCategory(id: Int, name: String) -> Bool {
+        let query = "UPDATE categories SET name='\(name)' WHERE id='\(id)'"
         let result = _db.execute(sql: query)
         return result != 0
     }

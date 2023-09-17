@@ -43,6 +43,15 @@ extension ExpenseViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sectionKey = [String](expenseSection.keys)[indexPath.section]
+        if let expenses = expenseSection[sectionKey] {
+            self.selectedId = expenses[indexPath.row].id
+        }
+        
+        performSegue(withIdentifier: "createexpensesegue", sender: nil)
+    }
+    
     func alertBeforeDelete(indexPath: IndexPath) {
         let deleteAlertController = UIAlertController(title: "Delete Expense", message: "Are you sure to delete the expense record", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .default)
@@ -51,7 +60,7 @@ extension ExpenseViewController: UITableViewDataSource, UITableViewDelegate {
             if let expenses = self.expenseSection[sectionKey] {
                 let result = self.tracker.deleteRecord(id: expenses[indexPath.row].id)
                 if result {
-                    self.updateExpense()
+                    self.updateTableView()
                 }
             }
         }

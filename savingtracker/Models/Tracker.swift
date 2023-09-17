@@ -88,4 +88,20 @@ class Tracker {
         let result = _dbManager.deleteCategory(id: id)
         return result
     }
+    
+    func updateCategory(id: Int, name: String) -> Bool {
+        let result = _dbManager.updateCategory(id: id, name: name)
+        return result
+    }
+    
+    func updateRecord(id: Int, category_id: Int, amount: Double, description: String, type: RecordType, date: String) -> Bool {
+        let result = _dbManager.updateRecord(id: id, category_id: category_id, amount: amount, descrip: description, type: type, date: date)
+        return result
+    }
+    
+    func getRecordById(id: Int) -> Record {
+        let rawRecord = _dbManager.fetchRecordById(id: id)
+        guard let record = rawRecord else { return Record() }
+        return Record(recordDist: record)
+    }
 }

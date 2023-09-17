@@ -7,12 +7,13 @@
 
 import UIKit
 
-class CategoryViewController: UIViewController {
+class CategoryViewController: UIViewController, UpdateTableViewProtocol {
     
     @IBOutlet weak var categoryTableView: UITableView!
     
     var categories: [Category] = []
     var tracker: Tracker!
+    var selectedId: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()

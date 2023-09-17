@@ -78,6 +78,16 @@ class Record {
         }
     }
     
+    init() {
+        self._id = 1
+        self._amount = 0.0
+        self._description = ""
+        self._type = RecordType.expense
+        self._date = ""
+        self._category_id = 1
+        self._category_name = ""
+    }
+    
     init(_id: Int, _amount: Double, _description: String, _date: String, _type: RecordType, _category_id: Int, _category_name: String) {
         self._id = _id
         self._amount = _amount
