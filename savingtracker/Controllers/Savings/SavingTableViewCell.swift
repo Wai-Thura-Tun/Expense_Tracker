@@ -32,7 +32,6 @@ class SavingTableViewCell: UITableViewCell {
         else {
             amountLabel.textColor = UIColor.green
         }
-        
         monthLabel.text = month
     }
 }

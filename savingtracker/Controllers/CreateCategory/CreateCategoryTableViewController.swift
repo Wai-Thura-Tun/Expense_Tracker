@@ -16,7 +16,7 @@ class CreateCategoryTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tracker = Tracker()
+        
         updateUI()
     }
     

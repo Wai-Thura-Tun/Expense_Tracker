@@ -23,14 +23,15 @@ class HomeViewController: UIViewController {
 
         tracker = Tracker()
         categories = tracker.getCategories()
-        categoriesPicker.dataSource = self
-        categoriesPicker.delegate = self
-        amountTextField.delegate = self
         setUp()
         updateSavings()
     }
     
     func setUp() {
+        categoriesPicker.dataSource = self
+        categoriesPicker.delegate = self
+        amountTextField.delegate = self
+        
         saveBtn.layer.cornerRadius = 10
         savingView.layer.cornerRadius = 10
         savingView.layer.shadowColor = UIColor.gray.cgColor
@@ -62,17 +63,11 @@ class HomeViewController: UIViewController {
         if amount > 0 {
             let result = tracker.createRecord(category_id: category_id, amount: amount, description: "", type: type, date: date.toString())
             if result {
-                alertAfterSave()
+                showAlert(title: "Save Expense", message: "Expense has been saved")
                 amountTextField.text = String(1000)
                 updateSavings()
             }
         }
     }
     
-    func alertAfterSave() {
-        let finishAlertController = UIAlertController(title: "Save Expense", message: "Expense has been saved successfully.", preferredStyle: .alert)
-        let finishAction = UIAlertAction(title: "Ok", style: .default)
-        finishAlertController.addAction(finishAction)
-        present(finishAlertController, animated: true)
-    }
 }

@@ -14,15 +14,17 @@ extension ProfileViewController {
         switch segue.identifier {
         case "savingsegue":
             let vc = segue.destination as! SavingViewController
-            vc.records = tracker.getRecords()
+            vc.tracker = self.tracker
         case "incomesegue":
             let vc = segue.destination as! IncomeViewController
-            vc.incomes = tracker.getIncomes()
+            vc.tracker = self.tracker
         case "expensesegue":
             let vc = segue.destination as! ExpenseViewController
+            vc.tracker = self.tracker
             vc.expenses = tracker.getExpenses()
         case "categorysegue":
             let vc = segue.destination as! CategoryViewController
+            vc.tracker = self.tracker
             vc.categories = tracker.getCategories()
         default:
             break

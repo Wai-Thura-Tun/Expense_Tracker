@@ -19,9 +19,8 @@ class IncomeViewController: UIViewController, UpdateTableViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tracker = Tracker()
-        incomeTableView.dataSource = self
-        incomeTableView.delegate = self
+        self.incomes = tracker.getIncomes()
+        setUp()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -29,10 +28,9 @@ class IncomeViewController: UIViewController, UpdateTableViewProtocol {
         incomeTableView.reloadData()
     }
     
-    func updateTableView() {
-        incomes = tracker.getIncomes()
-        reformatData()
-        incomeTableView.reloadData()
+    func setUp() {
+        incomeTableView.dataSource = self
+        incomeTableView.delegate = self
     }
     
     func reformatData() {
@@ -51,18 +49,7 @@ class IncomeViewController: UIViewController, UpdateTableViewProtocol {
     }
     
     @IBAction func createIncome(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "createincomesegue", sender: nil)
+        goToCreateIncome()
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "createincomesegue" {
-            let navVC = segue.destination as! UINavigationController
-            if let vc = navVC.topViewController as? CreateTableViewController {
-                vc.type = RecordType.income
-                vc.delegate = self
-            }
-        }
-    }
-    
     
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CreateTableViewController: UITableViewController {
+class CreateRecordTableViewController: UITableViewController {
 
     @IBOutlet weak var categoryPickerView: UIPickerView!
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -22,16 +22,17 @@ class CreateTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tracker = Tracker()
         categories = tracker.getCategories()
-        
+        setUp()
+        updateUI()
+    }
+    
+    func setUp() {
         categoryPickerView.dataSource = self
         categoryPickerView.delegate = self
         descriptionTextField.delegate = self
         amountTextField.delegate = self
-        
         amountTextField.keyboardType = .numberPad
-        updateUI()
     }
     
     func updateUI() {
@@ -60,7 +61,7 @@ class CreateTableViewController: UITableViewController {
         let category_id = categories[selectRow].id
         let description = descriptionTextField.text
         let date = datePicker.date
-        if let amountString = amountString, let description = description, let type = type {
+        if let amountString = amountString, !amountString.isEmpty, let description = description, !description.isEmpty, let type = type {
             let amount: Double = Double(amountString) ?? 0.0
             let result = tracker.createRecord(category_id: category_id, amount: amount, description: description, type: type, date: date.toString())
             if result {
@@ -68,5 +69,9 @@ class CreateTableViewController: UITableViewController {
             }
             self.dismiss(animated: true)
         }
+    }
+    
+    @IBAction func tapView(_ sender: Any) {
+        self.view.endEditing(true)
     }
 }

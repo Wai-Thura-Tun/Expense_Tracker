@@ -26,7 +26,7 @@ class IncomeTableViewCell: UITableViewCell {
     
     func configure(income: Record) {
         categoryLabel.text = income.categoryName
-        descripLabel.text = income.description
+        descripLabel.text = income.description.isEmpty ? "No description" : income.description
         amountLabel.text = "+ \(income.amount)"
     }
 }

@@ -19,18 +19,11 @@ class ExpenseViewController: UIViewController, UpdateTableViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tracker = Tracker()
         expenseTableView.dataSource = self
         expenseTableView.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        reformatData()
-        expenseTableView.reloadData()
-    }
-    
-    func updateTableView() {
-        expenses = tracker.getExpenses()
         reformatData()
         expenseTableView.reloadData()
     }
@@ -51,17 +44,7 @@ class ExpenseViewController: UIViewController, UpdateTableViewProtocol {
     }
     
     @IBAction func createExpense(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "createexpensesegue", sender: nil)
+        goToCreateExpense()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "createexpensesegue" {
-            let navVC = segue.destination as! UINavigationController
-            if let vc = navVC.topViewController as? CreateTableViewController {
-                vc.type = RecordType.expense
-                vc.delegate = self
-            }
-        }
-        
-    }
 }

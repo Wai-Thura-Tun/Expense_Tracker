@@ -39,7 +39,15 @@ extension IncomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            alertBeforeDelete(indexPath: indexPath)
+            showAlert(title: "Delete Income", message: "Are you sure to delete the income record") { _ in
+                let sectionKey: String = [String](self.incomeSection.keys)[indexPath.section]
+                if let incomes = self.incomeSection[sectionKey] {
+                    let result = self.tracker.deleteRecord(id: incomes[indexPath.row].id)
+                    if result {
+                        self.updateTableView()
+                    }
+                }
+            }
         }
     }
     
@@ -48,23 +56,13 @@ extension IncomeViewController: UITableViewDelegate, UITableViewDataSource {
         if let incomes = incomeSection[sectionKey] {
             self.selectedId = incomes[indexPath.row].id
         }
+        goToCreateIncome()
     }
     
-    func alertBeforeDelete(indexPath: IndexPath) {
-        let deleteAlertController = UIAlertController(title: "Delete Income", message: "Are you sure to delete the income record", preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default)
-        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            let sectionKey: String = [String](self.incomeSection.keys)[indexPath.section]
-            if let incomes = self.incomeSection[sectionKey] {
-                let result = self.tracker.deleteRecord(id: incomes[indexPath.row].id)
-                if result {
-                    self.updateTableView()
-                }
-            }
-        }
-        deleteAlertController.addAction(cancelAction)
-        deleteAlertController.addAction(okAction)
-        present(deleteAlertController, animated: true)
+    func updateTableView() {
+        incomes = tracker.getIncomes()
+        reformatData()
+        incomeTableView.reloadData()
     }
     
 }

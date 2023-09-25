@@ -30,36 +30,23 @@ extension CategoryViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            alertBeforeDelete(indexPath: indexPath)
+            showAlert(title: "Delete Category", message: "Are you sure to delete the category") { _ in
+                let id = self.categories[indexPath.row].id
+                let result = self.tracker.deleteCategory(id: id)
+                if result {
+                    self.updateTableView()
+                }
+            }
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectedId = categories[indexPath.row].id
-        performSegue(withIdentifier: "createcategorysegue", sender: nil)
+        goToCreateCategory()
     }
     
-    func alertBeforeDelete(indexPath: IndexPath) {
-        let deleteAlertController = UIAlertController(title: "Delete Category", message: "Are you sure to delete the category", preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default)
-        let okAction = UIAlertAction(title: "Ok", style: .default) { _ in
-            let id = self.categories[indexPath.row].id
-            let result = self.tracker.deleteCategory(id: id)
-            if result {
-                self.updateTableView()
-            }
-        }
-        deleteAlertController.addAction(cancelAction)
-        deleteAlertController.addAction(okAction)
-        present(deleteAlertController, animated: true)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "createcategorysegue" {
-            let navVC = segue.destination as! UINavigationController
-            if let createCategoryVC = navVC.topViewController as? CreateCategoryTableViewController {
-                createCategoryVC.delegate = self
-            }
-        }
+    func updateTableView() {
+        categories = tracker.getCategories()
+        categoryTableView.reloadData()
     }
 }

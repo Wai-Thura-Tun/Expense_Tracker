@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension CreateTableViewController: UITextFieldDelegate {
+extension CreateRecordTableViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

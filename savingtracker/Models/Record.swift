@@ -8,6 +8,7 @@
 import Foundation
 
 class Record {
+    
     private var _id: Int
     var id: Int {
         get {
@@ -110,7 +111,4 @@ class Record {
         self.init(_id: id, _amount: amount, _description: description, _date: date, _type: type, _category_id: categoryId, _category_name: categoryName)
     }
     
-    public func createRecord() {
-        
-    }
 }

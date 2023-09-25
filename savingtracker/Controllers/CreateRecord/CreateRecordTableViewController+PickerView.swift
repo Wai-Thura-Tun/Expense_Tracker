@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension CreateTableViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+extension CreateRecordTableViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

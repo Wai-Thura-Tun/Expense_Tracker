@@ -36,13 +36,13 @@ class ProfileViewController: UIViewController {
     }
     
     func setUp() {
-        configureUIView(savingAmountView)
-        configureUIView(incomeAmountView)
-        configureUIView(expenseAmountView)
-        configureBtn(savingBtn)
-        configureBtn(incomeBtn)
-        configureBtn(expenseBtn)
-        configureBtn(categoryBtn)
+        savingAmountView.addRadiusAndShadow()
+        incomeAmountView.addRadiusAndShadow()
+        expenseAmountView.addRadiusAndShadow()
+        savingBtn.addRadiusAndShadow()
+        incomeBtn.addRadiusAndShadow()
+        expenseBtn.addRadiusAndShadow()
+        categoryBtn.addRadiusAndShadow()
     }
     
     func updateAmount() {
@@ -50,24 +50,6 @@ class ProfileViewController: UIViewController {
         savingAmountLabel.text = String(saving)
         incomeAmountLabel.text = String(income)
         expenseAmountLabel.text = String(expense)
-    }
-    
-    func configureUIView(_ sender: UIView) {
-        sender.layer.cornerRadius = 5
-        sender.layer.shadowColor = UIColor.gray.cgColor
-        sender.layer.shadowOffset = CGSize(width: 0, height: 4)
-        sender.layer.shadowRadius = 10
-        sender.layer.shadowOpacity = 0.7
-        sender.layer.shadowPath = nil
-    }
-    
-    func configureBtn(_ sender: UIControl) {
-        sender.layer.cornerRadius = 5.0
-        sender.layer.shadowColor = UIColor.gray.cgColor
-        sender.layer.shadowOffset = CGSize(width: 0, height: 5)
-        sender.layer.shadowOpacity = 0.7
-        sender.layer.shadowRadius = 10
-        sender.layer.shadowPath = nil
     }
 
     @IBAction func clickSavings(_ sender: UIButton) {

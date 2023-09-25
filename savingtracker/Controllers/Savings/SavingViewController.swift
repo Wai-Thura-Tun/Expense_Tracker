@@ -13,17 +13,23 @@ class SavingViewController: UIViewController {
     
     var records: [Record] = []
     var savings: [String: [String:Double]] = [:]
+    var tracker: Tracker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        savingTableView.dataSource = self
-        savingTableView.delegate = self
+        setUp()
+        self.records = tracker.getRecords()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         reStructureData()
         savingTableView.reloadData()
+    }
+    
+    func setUp() {
+        savingTableView.dataSource = self
+        savingTableView.delegate = self
     }
     
     func reStructureData() {

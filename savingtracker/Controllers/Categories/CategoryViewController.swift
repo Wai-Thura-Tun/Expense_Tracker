@@ -18,17 +18,16 @@ class CategoryViewController: UIViewController, UpdateTableViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tracker = Tracker()
+        setUp()
+    }
+    
+    func setUp() {
         categoryTableView.dataSource = self
         categoryTableView.delegate = self
     }
     
     @IBAction func createCategory(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "createcategorysegue", sender: nil)
+        goToCreateCategory()
     }
     
-    func updateTableView() {
-        categories = tracker.getCategories()
-        categoryTableView.reloadData()
-    }
 }

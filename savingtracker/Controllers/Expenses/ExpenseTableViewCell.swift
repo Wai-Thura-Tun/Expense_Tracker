@@ -26,7 +26,7 @@ class ExpenseTableViewCell: UITableViewCell {
     
     func configure(expense: Record) {
         categoryLabel.text = expense.categoryName
-        descripLabel.text = expense.description
+        descripLabel.text = expense.description.isEmpty ? "No description" : expense.description
         amountLabel.text = "- \(expense.amount)"
     }
 }

@@ -39,7 +39,15 @@ extension ExpenseViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            alertBeforeDelete(indexPath: indexPath)
+            showAlert(title: "Delete Expense", message: "Are you sure to delete the expense record") { _ in
+                let sectionKey: String = [String](self.expenseSection.keys)[indexPath.section]
+                if let expenses = self.expenseSection[sectionKey] {
+                    let result = self.tracker.deleteRecord(id: expenses[indexPath.row].id)
+                    if result {
+                        self.updateTableView()
+                    }
+                }
+            }
         }
     }
     
@@ -48,24 +56,13 @@ extension ExpenseViewController: UITableViewDataSource, UITableViewDelegate {
         if let expenses = expenseSection[sectionKey] {
             self.selectedId = expenses[indexPath.row].id
         }
-        
-        performSegue(withIdentifier: "createexpensesegue", sender: nil)
+        goToCreateExpense()
     }
     
-    func alertBeforeDelete(indexPath: IndexPath) {
-        let deleteAlertController = UIAlertController(title: "Delete Expense", message: "Are you sure to delete the expense record", preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default)
-        let okAction = UIAlertAction(title: "Ok", style: .default) { _ in
-            let sectionKey: String = [String](self.expenseSection.keys)[indexPath.section]
-            if let expenses = self.expenseSection[sectionKey] {
-                let result = self.tracker.deleteRecord(id: expenses[indexPath.row].id)
-                if result {
-                    self.updateTableView()
-                }
-            }
-        }
-        deleteAlertController.addAction(cancelAction)
-        deleteAlertController.addAction(okAction)
-        present(deleteAlertController, animated: true)
+    func updateTableView() {
+        expenses = tracker.getExpenses()
+        reformatData()
+        expenseTableView.reloadData()
     }
+    
 }
