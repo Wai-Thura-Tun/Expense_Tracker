@@ -16,7 +16,8 @@
 		061801182AC23C5B00DB19EB /* ExpenseViewController+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061801172AC23C5B00DB19EB /* ExpenseViewController+Router.swift */; };
 		0618011A2AC23E6100DB19EB /* CategoryViewController+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061801192AC23E6100DB19EB /* CategoryViewController+Router.swift */; };
 		06282F562AAA3571007968AA /* SavingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06282F552AAA3571007968AA /* SavingViewController.swift */; };
-		064B03912AAF3818000FE8F0 /* Saving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B03902AAF3818000FE8F0 /* Saving.swift */; };
+		062C39102AC4FE5A0049F953 /* HomeViewController+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062C390F2AC4FE5A0049F953 /* HomeViewController+Notification.swift */; };
+		062C39122AC70DEA0049F953 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062C39112AC70DEA0049F953 /* NotificationManager.swift */; };
 		064E9A672AAB536C0044C9CB /* IncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064E9A662AAB536C0044C9CB /* IncomeViewController.swift */; };
 		064E9A722AAB75590044C9CB /* SQLTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064E9A6D2AAB75590044C9CB /* SQLTable.swift */; };
 		064E9A732AAB75590044C9CB /* SQLiteBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064E9A6E2AAB75590044C9CB /* SQLiteBase.swift */; };
@@ -27,15 +28,15 @@
 		065C9DEF2AAC51EC001822FF /* RecordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065C9DEE2AAC51EC001822FF /* RecordType.swift */; };
 		065C9DF32AAC5A44001822FF /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065C9DF22AAC5A44001822FF /* Tracker.swift */; };
 		065C9DF62AAC6DE7001822FF /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065C9DF52AAC6DE7001822FF /* StringExtension.swift */; };
-		065C9DFE2AAC7FC5001822FF /* latest_tracker.db in Resources */ = {isa = PBXBuildFile; fileRef = 065C9DFD2AAC7FC5001822FF /* latest_tracker.db */; };
 		065C9E002AAC91CF001822FF /* IncomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065C9DFF2AAC91CF001822FF /* IncomeTableViewCell.swift */; };
 		065C9E022AAC9E63001822FF /* IncomeViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065C9E012AAC9E63001822FF /* IncomeViewController+TableView.swift */; };
-		065C9E042AACAD18001822FF /* ProfileViewController+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065C9E032AACAD18001822FF /* ProfileViewController+Router.swift */; };
+		065C9E042AACAD18001822FF /* DetailViewController+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065C9E032AACAD18001822FF /* DetailViewController+Router.swift */; };
 		065C9E062AACAE95001822FF /* ExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065C9E052AACAE95001822FF /* ExpenseViewController.swift */; };
 		065C9E082AACAECB001822FF /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065C9E072AACAECB001822FF /* CategoryViewController.swift */; };
 		06633BE72AADCA280072A026 /* ExpenseViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06633BE62AADCA280072A026 /* ExpenseViewController+TableView.swift */; };
 		06633BE92AADCA3C0072A026 /* ExpenseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06633BE82AADCA3C0072A026 /* ExpenseTableViewCell.swift */; };
 		06633BEB2AADD1A00072A026 /* CategoryViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06633BEA2AADD1A00072A026 /* CategoryViewController+TableView.swift */; };
+		06701FC42AC49BBE00CC2A76 /* money_tracker.db in Resources */ = {isa = PBXBuildFile; fileRef = 06701FC32AC49BBE00CC2A76 /* money_tracker.db */; };
 		06747BD42AB4B89B00C0F686 /* HomeViewController+PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06747BD32AB4B89B00C0F686 /* HomeViewController+PickerView.swift */; };
 		06835D942AB0AF520011BD43 /* CreateRecordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06835D932AB0AF520011BD43 /* CreateRecordTableViewController.swift */; };
 		06835D962AB0B4530011BD43 /* CreateRecordTableViewController+PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06835D952AB0B4530011BD43 /* CreateRecordTableViewController+PickerView.swift */; };
@@ -46,7 +47,7 @@
 		06B1D7E52AADEA240041BE21 /* SavingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B1D7E42AADEA240041BE21 /* SavingTableViewCell.swift */; };
 		06CA4B0C2AA8B06D006CA639 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CA4B0B2AA8B06D006CA639 /* AppDelegate.swift */; };
 		06CA4B0E2AA8B06D006CA639 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CA4B0D2AA8B06D006CA639 /* SceneDelegate.swift */; };
-		06CA4B102AA8B06D006CA639 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CA4B0F2AA8B06D006CA639 /* ProfileViewController.swift */; };
+		06CA4B102AA8B06D006CA639 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CA4B0F2AA8B06D006CA639 /* DetailViewController.swift */; };
 		06CA4B132AA8B06D006CA639 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06CA4B112AA8B06D006CA639 /* Main.storyboard */; };
 		06CA4B152AA8B06F006CA639 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06CA4B142AA8B06F006CA639 /* Assets.xcassets */; };
 		06CA4B182AA8B06F006CA639 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06CA4B162AA8B06F006CA639 /* LaunchScreen.storyboard */; };
@@ -66,7 +67,8 @@
 		061801172AC23C5B00DB19EB /* ExpenseViewController+Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExpenseViewController+Router.swift"; sourceTree = "<group>"; };
 		061801192AC23E6100DB19EB /* CategoryViewController+Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryViewController+Router.swift"; sourceTree = "<group>"; };
 		06282F552AAA3571007968AA /* SavingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingViewController.swift; sourceTree = "<group>"; };
-		064B03902AAF3818000FE8F0 /* Saving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Saving.swift; sourceTree = "<group>"; };
+		062C390F2AC4FE5A0049F953 /* HomeViewController+Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Notification.swift"; sourceTree = "<group>"; };
+		062C39112AC70DEA0049F953 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		064E9A662AAB536C0044C9CB /* IncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewController.swift; sourceTree = "<group>"; };
 		064E9A6D2AAB75590044C9CB /* SQLTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLTable.swift; sourceTree = "<group>"; };
 		064E9A6E2AAB75590044C9CB /* SQLiteBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteBase.swift; sourceTree = "<group>"; };
@@ -78,15 +80,15 @@
 		065C9DEE2AAC51EC001822FF /* RecordType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordType.swift; sourceTree = "<group>"; };
 		065C9DF22AAC5A44001822FF /* Tracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracker.swift; sourceTree = "<group>"; };
 		065C9DF52AAC6DE7001822FF /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
-		065C9DFD2AAC7FC5001822FF /* latest_tracker.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = latest_tracker.db; sourceTree = "<group>"; };
 		065C9DFF2AAC91CF001822FF /* IncomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeTableViewCell.swift; sourceTree = "<group>"; };
 		065C9E012AAC9E63001822FF /* IncomeViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IncomeViewController+TableView.swift"; sourceTree = "<group>"; };
-		065C9E032AACAD18001822FF /* ProfileViewController+Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileViewController+Router.swift"; sourceTree = "<group>"; };
+		065C9E032AACAD18001822FF /* DetailViewController+Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+Router.swift"; sourceTree = "<group>"; };
 		065C9E052AACAE95001822FF /* ExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewController.swift; sourceTree = "<group>"; };
 		065C9E072AACAECB001822FF /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		06633BE62AADCA280072A026 /* ExpenseViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExpenseViewController+TableView.swift"; sourceTree = "<group>"; };
 		06633BE82AADCA3C0072A026 /* ExpenseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTableViewCell.swift; sourceTree = "<group>"; };
 		06633BEA2AADD1A00072A026 /* CategoryViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryViewController+TableView.swift"; sourceTree = "<group>"; };
+		06701FC32AC49BBE00CC2A76 /* money_tracker.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = money_tracker.db; sourceTree = "<group>"; };
 		06747BD32AB4B89B00C0F686 /* HomeViewController+PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+PickerView.swift"; sourceTree = "<group>"; };
 		06835D932AB0AF520011BD43 /* CreateRecordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecordTableViewController.swift; sourceTree = "<group>"; };
 		06835D952AB0B4530011BD43 /* CreateRecordTableViewController+PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateRecordTableViewController+PickerView.swift"; sourceTree = "<group>"; };
@@ -98,7 +100,7 @@
 		06CA4B082AA8B06D006CA639 /* savingtracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = savingtracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06CA4B0B2AA8B06D006CA639 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06CA4B0D2AA8B06D006CA639 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		06CA4B0F2AA8B06D006CA639 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		06CA4B0F2AA8B06D006CA639 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		06CA4B122AA8B06D006CA639 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		06CA4B142AA8B06F006CA639 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06CA4B172AA8B06F006CA639 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -128,7 +130,7 @@
 				0698307D2AB4958300C99F25 /* Home */,
 				06CF8D612AB33142002A1910 /* CreateCategory */,
 				06835D922AB0AF0A0011BD43 /* CreateRecord */,
-				06A60DA42AAB475800A0E918 /* Profile */,
+				06A60DA42AAB475800A0E918 /* Detail */,
 				06282F5B2AAA3742007968AA /* Categories */,
 				06282F5A2AAA373D007968AA /* Expenses */,
 				06282F592AAA3737007968AA /* Incomes */,
@@ -185,9 +187,9 @@
 				060121D62AAC46D200E3F9FE /* Record.swift */,
 				065C9DEE2AAC51EC001822FF /* RecordType.swift */,
 				060121D82AAC46DE00E3F9FE /* Category.swift */,
-				064B03902AAF3818000FE8F0 /* Saving.swift */,
 				065C9DF22AAC5A44001822FF /* Tracker.swift */,
 				060121DA2AAC46F000E3F9FE /* DBManager.swift */,
+				062C39112AC70DEA0049F953 /* NotificationManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -195,7 +197,7 @@
 		064E9A6B2AAB5D140044C9CB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				065C9DFD2AAC7FC5001822FF /* latest_tracker.db */,
+				06701FC32AC49BBE00CC2A76 /* money_tracker.db */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -256,17 +258,18 @@
 				0698307E2AB4959D00C99F25 /* HomeViewController.swift */,
 				06747BD32AB4B89B00C0F686 /* HomeViewController+PickerView.swift */,
 				06F2E9C62AB5368600401DE7 /* HomeViewController+TextField.swift */,
+				062C390F2AC4FE5A0049F953 /* HomeViewController+Notification.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
 		};
-		06A60DA42AAB475800A0E918 /* Profile */ = {
+		06A60DA42AAB475800A0E918 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				06CA4B0F2AA8B06D006CA639 /* ProfileViewController.swift */,
-				065C9E032AACAD18001822FF /* ProfileViewController+Router.swift */,
+				06CA4B0F2AA8B06D006CA639 /* DetailViewController.swift */,
+				065C9E032AACAD18001822FF /* DetailViewController+Router.swift */,
 			);
-			path = Profile;
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		06CA4AFF2AA8B06D006CA639 = {
@@ -373,9 +376,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				06CA4B182AA8B06F006CA639 /* LaunchScreen.storyboard in Resources */,
-				065C9DFE2AAC7FC5001822FF /* latest_tracker.db in Resources */,
 				06CA4B152AA8B06F006CA639 /* Assets.xcassets in Resources */,
 				06CA4B132AA8B06D006CA639 /* Main.storyboard in Resources */,
+				06701FC42AC49BBE00CC2A76 /* money_tracker.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,14 +404,15 @@
 				06633BE72AADCA280072A026 /* ExpenseViewController+TableView.swift in Sources */,
 				06835D942AB0AF520011BD43 /* CreateRecordTableViewController.swift in Sources */,
 				064E9A722AAB75590044C9CB /* SQLTable.swift in Sources */,
-				065C9E042AACAD18001822FF /* ProfileViewController+Router.swift in Sources */,
+				065C9E042AACAD18001822FF /* DetailViewController+Router.swift in Sources */,
 				060121D72AAC46D200E3F9FE /* Record.swift in Sources */,
 				060121DB2AAC46F000E3F9FE /* DBManager.swift in Sources */,
+				062C39122AC70DEA0049F953 /* NotificationManager.swift in Sources */,
 				065C9DF32AAC5A44001822FF /* Tracker.swift in Sources */,
-				064B03912AAF3818000FE8F0 /* Saving.swift in Sources */,
 				06B1D7E32AADEA120041BE21 /* SavingViewController+TableView.swift in Sources */,
-				06CA4B102AA8B06D006CA639 /* ProfileViewController.swift in Sources */,
+				06CA4B102AA8B06D006CA639 /* DetailViewController.swift in Sources */,
 				065C9DEF2AAC51EC001822FF /* RecordType.swift in Sources */,
+				062C39102AC4FE5A0049F953 /* HomeViewController+Notification.swift in Sources */,
 				065C9DF62AAC6DE7001822FF /* StringExtension.swift in Sources */,
 				064E9A732AAB75590044C9CB /* SQLiteBase.swift in Sources */,
 				064E9A672AAB536C0044C9CB /* IncomeViewController.swift in Sources */,

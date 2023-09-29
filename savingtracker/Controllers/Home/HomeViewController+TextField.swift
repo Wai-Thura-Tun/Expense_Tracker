@@ -15,12 +15,12 @@ extension HomeViewController: UITextFieldDelegate {
     }
     
     func increaseAmount() {
-        let amount = Double(amountTextField.text ?? "") ?? 0
+        let amount = Int(amountTextField.text ?? "") ?? 0
         amountTextField.text = String(amount + 1)
     }
     
     func decreaseAmount() {
-        let amount = Double(amountTextField.text ?? "") ?? 0
+        let amount = Int(amountTextField.text ?? "") ?? 0
         if amount > 0 {
             amountTextField.text = String(amount - 1)
         }

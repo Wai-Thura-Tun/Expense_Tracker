@@ -20,10 +20,15 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tracker = Tracker()
-        categories = tracker.getCategories()
         setUp()
+        NotificationManager.checkForNotificationPermission(tracker: tracker)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        categories = tracker.getCategories()
+        categoriesPicker.reloadAllComponents()
         updateSavings()
     }
     
@@ -31,6 +36,7 @@ class HomeViewController: UIViewController {
         categoriesPicker.dataSource = self
         categoriesPicker.delegate = self
         amountTextField.delegate = self
+        amountTextField.keyboardType = .numberPad
         
         saveBtn.layer.cornerRadius = 10
         savingView.layer.cornerRadius = 10
@@ -59,15 +65,19 @@ class HomeViewController: UIViewController {
         let category_id = categories[selectPickerId].id
         let amount = Double(amountTextField.text ?? "") ?? 0.0
         let date = Date()
-        let type = RecordType.expense
+        let type = RecordType.EXPENSE
         if amount > 0 {
             let result = tracker.createRecord(category_id: category_id, amount: amount, description: "", type: type, date: date.toString())
             if result {
                 showAlert(title: "Save Expense", message: "Expense has been saved")
                 amountTextField.text = String(1000)
+                NotificationManager.checkForNotificationPermission(tracker: tracker)
                 updateSavings()
             }
         }
     }
     
+    @IBAction func tapView(_ sender: Any) {
+        self.view.endEditing(true)
+    }
 }

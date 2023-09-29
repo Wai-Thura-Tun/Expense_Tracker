@@ -27,10 +27,10 @@ class SavingTableViewCell: UITableViewCell {
         amountLabel.text = String(amount)
         
         if amount < 1 {
-            amountLabel.textColor = UIColor.red
+            amountLabel.textColor = UIColor.systemRed
         }
         else {
-            amountLabel.textColor = UIColor.green
+            amountLabel.textColor = UIColor.systemGreen
         }
         monthLabel.text = month
     }

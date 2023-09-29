@@ -14,7 +14,7 @@ extension ExpenseViewController {
             let navVC = segue.destination as! UINavigationController
             if let vc = navVC.topViewController as? CreateRecordTableViewController {
                 vc.tracker = self.tracker
-                vc.type = RecordType.expense
+                vc.type = RecordType.EXPENSE
                 vc.delegate = self
             }
         }

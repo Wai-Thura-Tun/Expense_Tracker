@@ -35,4 +35,31 @@ extension SavingViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return [String](savings.keys)[section]
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            showAlert(title: "Delete Saving", message: "Are you to delete all incomes and expense of this month?") { _ in
+                let year = [String](self.savings.keys)[indexPath.section]
+                if let months = self.savings[year] {
+                    let nameMonth = [String](months.keys)[indexPath.row]
+                    let monthInt: Int = nameMonth.toMonthInt()
+                    let month: String = monthInt <= 9 ? "0\(monthInt)" : "\(monthInt)"
+                    let result = self.tracker.deleteRecordByDate(date: "\(year)-\(month)") 
+                    if result {
+                        self.updateTableView()
+                    }
+                }
+            }
+        }
+    }
+    
+    func updateTableView() {
+        self.records = tracker.getRecords()
+        reStructureData()
+        savingTableView.reloadData()
+    }
 }

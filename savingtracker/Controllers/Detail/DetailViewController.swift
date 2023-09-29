@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class DetailViewController: UIViewController {
 
     @IBOutlet weak var savingAmountLabel: UILabel!
     @IBOutlet weak var incomeAmountLabel: UILabel!
@@ -47,8 +47,8 @@ class ProfileViewController: UIViewController {
     
     func updateAmount() {
         let (saving,income,expense) = tracker.getCurrentRecords()
-        savingAmountLabel.text = String(saving)
-        incomeAmountLabel.text = String(income)
+        savingAmountLabel.text = String(Int(saving))
+        incomeAmountLabel.text = String(Int(income))
         expenseAmountLabel.text = String(expense)
     }
 

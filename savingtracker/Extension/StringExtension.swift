@@ -42,4 +42,16 @@ extension String {
         let date = dateFomatter.date(from: self)
         return date
     }
+    
+    func toMonthInt() -> Int {
+        var month:Int = 1
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM"
+        if let date = dateFormatter.date(from: self) {
+            let calendar = Calendar.current
+            let dateComponent = calendar.dateComponents([.month], from: date)
+            month = dateComponent.month ?? 1
+        }
+        return month
+    }
 }

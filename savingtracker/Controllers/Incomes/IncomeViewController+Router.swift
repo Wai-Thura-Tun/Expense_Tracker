@@ -14,7 +14,7 @@ extension IncomeViewController {
             let navVC = segue.destination as! UINavigationController
             if let vc = navVC.topViewController as? CreateRecordTableViewController {
                 vc.tracker = self.tracker
-                vc.type = RecordType.income
+                vc.type = RecordType.INCOME
                 vc.delegate = self
             }
         }

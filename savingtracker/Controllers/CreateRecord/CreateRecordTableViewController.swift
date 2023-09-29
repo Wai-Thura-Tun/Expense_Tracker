@@ -61,10 +61,18 @@ class CreateRecordTableViewController: UITableViewController {
         let category_id = categories[selectRow].id
         let description = descriptionTextField.text
         let date = datePicker.date
+        var result: Bool = false;
         if let amountString = amountString, !amountString.isEmpty, let description = description, !description.isEmpty, let type = type {
             let amount: Double = Double(amountString) ?? 0.0
-            let result = tracker.createRecord(category_id: category_id, amount: amount, description: description, type: type, date: date.toString())
+            if let id = delegate?.selectedId {
+                result = tracker.updateRecord(id: id, category_id: category_id, amount: amount, description: description, type: type, date: date.toString())
+            }
+            else {
+                result = tracker.createRecord(category_id: category_id, amount: amount, description: description, type: type, date: date.toString())
+            }
+            
             if result {
+                NotificationManager.checkForNotificationPermission(tracker: tracker)
                 delegate?.updateTableView()
             }
             self.dismiss(animated: true)

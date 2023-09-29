@@ -33,11 +33,12 @@ class SavingViewController: UIViewController {
     }
     
     func reStructureData() {
+        savings.removeAll()
         for record in records {
             let year = record.date.getYear()
             let month = record.date.getMonth()
             var amount:Double = record.amount
-            amount = record.type == RecordType.expense ? -1 * amount : amount
+            amount = record.type == RecordType.EXPENSE ? -1 * amount : amount
             
             if var saving = savings[year] {
                 if saving.keys.contains(month) {

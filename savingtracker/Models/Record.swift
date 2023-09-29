@@ -83,7 +83,7 @@ class Record {
         self._id = 1
         self._amount = 0.0
         self._description = ""
-        self._type = RecordType.expense
+        self._type = RecordType.EXPENSE
         self._date = ""
         self._category_id = 1
         self._category_name = ""
@@ -105,7 +105,7 @@ class Record {
         let description: String = recordDist["description"] as? String ?? ""
         let date: String = recordDist["date"] as? String ?? ""
         let typeString: String = recordDist["type"] as? String ?? ""
-        let type: RecordType = RecordType(rawValue: typeString) ?? RecordType.expense
+        let type: RecordType = RecordType(rawValue: typeString) ?? RecordType.EXPENSE
         let categoryId: Int = recordDist["category_id"] as? Int ?? 1
         let categoryName: String = recordDist["category_name"] as? String ?? ""
         self.init(_id: id, _amount: amount, _description: description, _date: date, _type: type, _category_id: categoryId, _category_name: categoryName)

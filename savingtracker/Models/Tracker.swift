@@ -20,17 +20,17 @@ class Tracker {
     
     func getIncomes() -> [Record] {
         return getRecords().filter { record in
-            return record.type == RecordType.income
+            return record.type == RecordType.INCOME
         }
     }
     
     func getExpenses() -> [Record] {
         return getRecords().filter { record in
-            return record.type == RecordType.expense
+            return record.type == RecordType.EXPENSE
         }
     }
     
-    func getCurrentRecords() -> (Double, Double, Double) {
+    func getCurrentRecords() -> (Int, Int, Int){
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM"
@@ -41,17 +41,17 @@ class Tracker {
         let currentRecordList = getRecords().filter { record in
             return (month == record.date.getMonth()) && (year == record.date.getYear())
         }
-        let currentIncome = currentRecordList.filter { record in
-            return record.type == RecordType.income
+        let currentIncome = Int(currentRecordList.filter { record in
+            return record.type == RecordType.INCOME
         }.reduce(0) { partialResult, record in
             return partialResult + record.amount
-        }
+        })
         
-        let currentExpense = currentRecordList.filter { record in
-            return record.type == RecordType.expense
+        let currentExpense = Int(currentRecordList.filter { record in
+            return record.type == RecordType.EXPENSE
         }.reduce(0) { partialResult, record in
             return partialResult + record.amount
-        }
+        })
         
         let currentSavings = currentIncome - currentExpense
         return (currentSavings,currentIncome,currentExpense)
@@ -75,6 +75,11 @@ class Tracker {
     
     func deleteRecord(id: Int) -> Bool {
         let result = _dbManager.deleteRecord(id: id)
+        return result
+    }
+    
+    func deleteRecordByDate(date: String) -> Bool {
+        let result = _dbManager.deleteRecordByDate(date: date)
         return result
     }
     
@@ -108,5 +113,4 @@ class Tracker {
         let result = _dbManager.deleteCategory(id: id)
         return result
     }
-    
 }

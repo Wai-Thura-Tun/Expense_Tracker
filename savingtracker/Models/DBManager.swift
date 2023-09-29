@@ -28,13 +28,13 @@ class DBManager {
     // MARK: - Records
     
     public func fetchRecords() -> [[String: Any]] {
-        let query = "SELECT r.*, c.id as category_id, c.name as category_name FROM records r INNER JOIN categories c ON c.id = r.category_id";
+        let query = "SELECT r.*, c.id as category_id, c.name as category_name FROM records r INNER JOIN categories c ON c.id = r.category_id ORDER BY DATE(r.date) DESC";
         let result = _db.query(sql: query)
         return result
     }
     
     public func fetchRecordById(id: Int) -> [String:Any]? {
-        let query = "SELECT r.*, c.id as category_id, c.name as category_name FROM records r INNER JOIN categories c ON c.id = r.category_id WHERE r.id='\(id)'"
+        let query = "SELECT r.*, c.id as category_id, c.name as category_name FROM records r INNER JOIN categories c ON c.id = r.category_id WHERE r.id='\(id)' ORDER BY DATE(r.date) DESC"
         let result = _db.query(sql: query)
         return result.first
     }
@@ -46,13 +46,19 @@ class DBManager {
     }
     
     public func updateRecord(id: Int, category_id: Int,amount: Double, descrip: String, type: RecordType, date: String) -> Bool {
-        let query = "UPDATE records SET category_id='\(category_id)',amount='\(amount)',description='\(descrip)',date='\(date)',type='\(type)' WHERE id='\(id)'"
+        let query = "UPDATE records SET category_id='\(category_id)',amount='\(amount)',description='\(descrip)',date='\(date)',type='\(type.rawValue)' WHERE id='\(id)'"
         let result = _db.execute(sql: query)
         return result != 0
     }
     
     public func deleteRecord(id: Int) -> Bool {
         let query = "DELETE FROM records WHERE id='\(id)'"
+        let result = _db.execute(sql: query)
+        return result != 0
+    }
+    
+    public func deleteRecordByDate(date: String) -> Bool {
+        let query = "DELETE FROM records WHERE date LIKE '\(date)%'"
         let result = _db.execute(sql: query)
         return result != 0
     }
@@ -90,4 +96,3 @@ class DBManager {
     }
     
 }
-

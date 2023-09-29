@@ -7,7 +7,8 @@
 
 import Foundation
 
-enum RecordType: String {
-    case income = "INC"
-    case expense = "EXP"
+enum RecordType: String, CaseIterable {
+    case INCOME = "Income"
+    case EXPENSE = "Expense"
+    case SAVING = "Saving"
 }
