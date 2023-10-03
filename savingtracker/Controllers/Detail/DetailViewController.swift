@@ -47,6 +47,12 @@ class DetailViewController: UIViewController {
     
     func updateAmount() {
         let (saving,income,expense) = tracker.getCurrentRecords()
+        if saving < 0 {
+            savingAmountLabel.textColor = UIColor.red
+        }
+        else {
+            savingAmountLabel.textColor = UIColor.green
+        }
         savingAmountLabel.text = String(Int(saving))
         incomeAmountLabel.text = String(Int(income))
         expenseAmountLabel.text = String(expense)
@@ -68,4 +74,3 @@ class DetailViewController: UIViewController {
         goToCategory()
     }
 }
-

@@ -20,7 +20,7 @@ extension SavingViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "savingcell") as! SavingTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: SavingTableViewCell.identifier) as! SavingTableViewCell
         let sectionKey = [String](savings.keys)[indexPath.section]
         if let savings = savings[sectionKey] {
             let month = [String](savings.keys)[indexPath.row]

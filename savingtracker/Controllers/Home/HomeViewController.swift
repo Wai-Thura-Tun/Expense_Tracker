@@ -49,6 +49,12 @@ class HomeViewController: UIViewController {
     
     func updateSavings() {
         let (saving, _, _) = tracker.getCurrentRecords()
+        if saving < 0 {
+            savingAmountLabel.textColor = UIColor.red
+        }
+        else {
+            savingAmountLabel.textColor = UIColor.green
+        }
         savingAmountLabel.text = String(saving)
     }
     

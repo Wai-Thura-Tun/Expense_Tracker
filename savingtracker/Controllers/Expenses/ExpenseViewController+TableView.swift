@@ -20,7 +20,7 @@ extension ExpenseViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "expensecell") as! ExpenseTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ExpenseTableViewCell.identifier) as! ExpenseTableViewCell
         let sectionKey = [String](expenseSection.keys)[indexPath.section]
         
         if let expenses = expenseSection[sectionKey] {

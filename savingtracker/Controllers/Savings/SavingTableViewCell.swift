@@ -12,6 +12,8 @@ class SavingTableViewCell: UITableViewCell {
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var monthLabel: UILabel!
     
+    static let identifier: String = "savingcell"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

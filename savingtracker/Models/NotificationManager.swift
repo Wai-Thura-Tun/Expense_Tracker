@@ -61,10 +61,7 @@ class NotificationManager {
         
         notificationCenter.add(request) { error in
             if let error = error {
-                print("Error scheduling notification: \(error.localizedDescription)")
-            }
-            else {
-                print("Notification scheduled successfully")
+                return
             }
         }
     }

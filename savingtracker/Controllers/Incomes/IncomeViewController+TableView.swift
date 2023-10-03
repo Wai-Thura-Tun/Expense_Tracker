@@ -20,7 +20,7 @@ extension IncomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "incomecell") as! IncomeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: IncomeTableViewCell.identifier) as! IncomeTableViewCell
         let sectionKey: String = [String](incomeSection.keys)[indexPath.section]
         
         if let incomes = incomeSection[sectionKey] {

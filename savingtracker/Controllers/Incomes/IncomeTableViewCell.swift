@@ -13,6 +13,8 @@ class IncomeTableViewCell: UITableViewCell {
     @IBOutlet weak var descripLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
     
+    static let identifier: String = "incomecell"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
