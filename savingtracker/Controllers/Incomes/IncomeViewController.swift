@@ -24,6 +24,7 @@ class IncomeViewController: UIViewController, UpdateTableViewProtocol {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        selectedId = nil
         reformatData()
         incomeTableView.reloadData()
     }

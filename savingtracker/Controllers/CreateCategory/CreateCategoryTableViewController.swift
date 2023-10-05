@@ -27,6 +27,7 @@ class CreateCategoryTableViewController: UITableViewController {
     }
 
     @IBAction func cancel(_ sender: UIBarButtonItem) {
+        delegate?.selectedId = nil
         self.dismiss(animated: true)
     }
     
@@ -43,6 +44,7 @@ class CreateCategoryTableViewController: UITableViewController {
             if result {
                 delegate?.updateTableView()
             }
+            delegate?.selectedId = nil
             self.dismiss(animated: true)
         }
     }

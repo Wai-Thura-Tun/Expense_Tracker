@@ -42,6 +42,7 @@
 		06835D962AB0B4530011BD43 /* CreateRecordTableViewController+PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06835D952AB0B4530011BD43 /* CreateRecordTableViewController+PickerView.swift */; };
 		06835D982AB0B46E0011BD43 /* CreateRecordTableViewController+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06835D972AB0B46E0011BD43 /* CreateRecordTableViewController+TextField.swift */; };
 		068CFC122AB6BD66006095C1 /* UpdateTableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CFC112AB6BD66006095C1 /* UpdateTableViewProtocol.swift */; };
+		06925F742ACD87E900681E11 /* CreateRecordTableViewController+TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06925F732ACD87E900681E11 /* CreateRecordTableViewController+TextView.swift */; };
 		0698307F2AB4959D00C99F25 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0698307E2AB4959D00C99F25 /* HomeViewController.swift */; };
 		06B1D7E32AADEA120041BE21 /* SavingViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B1D7E22AADEA120041BE21 /* SavingViewController+TableView.swift */; };
 		06B1D7E52AADEA240041BE21 /* SavingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B1D7E42AADEA240041BE21 /* SavingTableViewCell.swift */; };
@@ -94,6 +95,7 @@
 		06835D952AB0B4530011BD43 /* CreateRecordTableViewController+PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateRecordTableViewController+PickerView.swift"; sourceTree = "<group>"; };
 		06835D972AB0B46E0011BD43 /* CreateRecordTableViewController+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateRecordTableViewController+TextField.swift"; sourceTree = "<group>"; };
 		068CFC112AB6BD66006095C1 /* UpdateTableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTableViewProtocol.swift; sourceTree = "<group>"; };
+		06925F732ACD87E900681E11 /* CreateRecordTableViewController+TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateRecordTableViewController+TextView.swift"; sourceTree = "<group>"; };
 		0698307E2AB4959D00C99F25 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		06B1D7E22AADEA120041BE21 /* SavingViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavingViewController+TableView.swift"; sourceTree = "<group>"; };
 		06B1D7E42AADEA240041BE21 /* SavingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingTableViewCell.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				06835D932AB0AF520011BD43 /* CreateRecordTableViewController.swift */,
 				06835D952AB0B4530011BD43 /* CreateRecordTableViewController+PickerView.swift */,
 				06835D972AB0B46E0011BD43 /* CreateRecordTableViewController+TextField.swift */,
+				06925F732ACD87E900681E11 /* CreateRecordTableViewController+TextView.swift */,
 			);
 			path = CreateRecord;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				061801162AC23BF800DB19EB /* IncomeViewController+Router.swift in Sources */,
 				065C9E082AACAECB001822FF /* CategoryViewController.swift in Sources */,
 				068CFC122AB6BD66006095C1 /* UpdateTableViewProtocol.swift in Sources */,
+				06925F742ACD87E900681E11 /* CreateRecordTableViewController+TextView.swift in Sources */,
 				064E9A752AAB75590044C9CB /* CloudDB.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -24,6 +24,7 @@ class ExpenseViewController: UIViewController, UpdateTableViewProtocol {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        selectedId = nil
         reformatData()
         expenseTableView.reloadData()
     }

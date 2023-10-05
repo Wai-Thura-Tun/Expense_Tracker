@@ -59,10 +59,7 @@ class NotificationManager {
         
         let request = UNNotificationRequest(identifier: "notifytracker", content: content, trigger: trigger)
         
-        notificationCenter.add(request) { error in
-            if let error = error {
-                return
-            }
+        notificationCenter.add(request) { _ in
         }
     }
 }

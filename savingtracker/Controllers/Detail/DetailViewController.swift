@@ -28,7 +28,6 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         tracker = Tracker()
         setUp()
-        updateAmount()
     }
     
     override func viewWillAppear(_ animated: Bool) {
