@@ -36,15 +36,8 @@ class HomeViewController: UIViewController {
         categoriesPicker.dataSource = self
         categoriesPicker.delegate = self
         amountTextField.delegate = self
-        amountTextField.keyboardType = .numberPad
-        
+        amountTextField.keyboardType = UIKeyboardType.decimalPad
         saveBtn.layer.cornerRadius = 10
-        savingView.layer.cornerRadius = 10
-        savingView.layer.shadowColor = UIColor.gray.cgColor
-        savingView.layer.shadowOpacity = 0.7
-        savingView.layer.shadowRadius = 5
-        savingView.layer.shadowOffset = CGSize(width: 2, height: 0)
-        savingView.layer.shadowPath = nil
     }
     
     func updateSavings() {

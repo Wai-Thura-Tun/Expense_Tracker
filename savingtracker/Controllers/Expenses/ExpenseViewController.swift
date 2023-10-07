@@ -19,14 +19,19 @@ class ExpenseViewController: UIViewController, UpdateTableViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        expenseTableView.dataSource = self
-        expenseTableView.delegate = self
+        self.expenses = tracker.getExpenses()
+        setUp()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         selectedId = nil
         reformatData()
         expenseTableView.reloadData()
+    }
+    
+    func setUp() {
+        expenseTableView.dataSource = self
+        expenseTableView.delegate = self
     }
     
     func reformatData() {

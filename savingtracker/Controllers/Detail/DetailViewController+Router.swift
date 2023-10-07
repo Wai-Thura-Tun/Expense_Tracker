@@ -21,11 +21,9 @@ extension DetailViewController {
         case "expensesegue":
             let vc = segue.destination as! ExpenseViewController
             vc.tracker = self.tracker
-            vc.expenses = tracker.getExpenses()
         case "categorysegue":
             let vc = segue.destination as! CategoryViewController
             vc.tracker = self.tracker
-            vc.categories = tracker.getCategories()
         default:
             break
         }

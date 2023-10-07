@@ -21,7 +21,6 @@ class CreateCategoryTableViewController: UITableViewController {
         nameTextField.addPaddingViewToTextField()
     }
     
-    
     func updateUI() {
         if let id = delegate?.selectedId {
             nameTextField.text = tracker.getCateogryByID(id: id).name

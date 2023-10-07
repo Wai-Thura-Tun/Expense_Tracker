@@ -18,7 +18,12 @@ class CategoryViewController: UIViewController, UpdateTableViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.categories = tracker.getCategories()
         setUp()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        categoryTableView.reloadData()
     }
     
     func setUp() {

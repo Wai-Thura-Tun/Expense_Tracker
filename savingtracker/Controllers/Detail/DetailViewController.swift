@@ -35,9 +35,6 @@ class DetailViewController: UIViewController {
     }
     
     func setUp() {
-        savingAmountView.addRadiusAndShadow()
-        incomeAmountView.addRadiusAndShadow()
-        expenseAmountView.addRadiusAndShadow()
         savingBtn.addRadiusAndShadow()
         incomeBtn.addRadiusAndShadow()
         expenseBtn.addRadiusAndShadow()
