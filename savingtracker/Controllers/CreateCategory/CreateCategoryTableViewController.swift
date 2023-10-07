@@ -18,7 +18,9 @@ class CreateCategoryTableViewController: UITableViewController {
         super.viewDidLoad()
         
         updateUI()
+        nameTextField.addPaddingViewToTextField()
     }
+    
     
     func updateUI() {
         if let id = delegate?.selectedId {

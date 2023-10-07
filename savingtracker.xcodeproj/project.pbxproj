@@ -52,6 +52,7 @@
 		06CA4B132AA8B06D006CA639 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06CA4B112AA8B06D006CA639 /* Main.storyboard */; };
 		06CA4B152AA8B06F006CA639 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06CA4B142AA8B06F006CA639 /* Assets.xcassets */; };
 		06CA4B182AA8B06F006CA639 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06CA4B162AA8B06F006CA639 /* LaunchScreen.storyboard */; };
+		06CDA1B72AD0E427007C4F19 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CDA1B62AD0E427007C4F19 /* UITextFieldExtension.swift */; };
 		06CF8D632AB3318B002A1910 /* CreateCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CF8D622AB3318B002A1910 /* CreateCategoryTableViewController.swift */; };
 		06CF8D652AB36299002A1910 /* CreateCategoryTableViewController+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CF8D642AB36299002A1910 /* CreateCategoryTableViewController+TextField.swift */; };
 		06E55BBF2AB136D900E793A3 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E55BBE2AB136D900E793A3 /* DateExtension.swift */; };
@@ -107,6 +108,7 @@
 		06CA4B142AA8B06F006CA639 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06CA4B172AA8B06F006CA639 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06CA4B192AA8B06F006CA639 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06CDA1B62AD0E427007C4F19 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		06CF8D622AB3318B002A1910 /* CreateCategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryTableViewController.swift; sourceTree = "<group>"; };
 		06CF8D642AB36299002A1910 /* CreateCategoryTableViewController+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateCategoryTableViewController+TextField.swift"; sourceTree = "<group>"; };
 		06E55BBE2AB136D900E793A3 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				06E55BBE2AB136D900E793A3 /* DateExtension.swift */,
 				0618010F2AC233BC00DB19EB /* UIViewControllerExtension.swift */,
 				061801132AC237DA00DB19EB /* UIViewExtension.swift */,
+				06CDA1B62AD0E427007C4F19 /* UITextFieldExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				06F2E9C72AB5368600401DE7 /* HomeViewController+TextField.swift in Sources */,
 				0618011A2AC23E6100DB19EB /* CategoryViewController+Router.swift in Sources */,
 				06633BEB2AADD1A00072A026 /* CategoryViewController+TableView.swift in Sources */,
+				06CDA1B72AD0E427007C4F19 /* UITextFieldExtension.swift in Sources */,
 				061801102AC233BC00DB19EB /* UIViewControllerExtension.swift in Sources */,
 				06633BE92AADCA3C0072A026 /* ExpenseTableViewCell.swift in Sources */,
 				06747BD42AB4B89B00C0F686 /* HomeViewController+PickerView.swift in Sources */,

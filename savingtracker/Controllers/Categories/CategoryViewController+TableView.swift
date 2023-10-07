@@ -30,7 +30,7 @@ extension CategoryViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            showAlert(title: "Delete Category", message: "Are you sure to delete the category") { _ in
+            showAlert(title: "Delete Category", message: "Are you sure to delete the category? Income and expense with that cateogry will also be deleted.") { _ in
                 let id = self.categories[indexPath.row].id
                 let result = self.tracker.deleteCategory(id: id)
                 if result {

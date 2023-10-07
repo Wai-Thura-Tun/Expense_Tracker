@@ -50,18 +50,18 @@ class CreateRecordTableViewController: UITableViewController {
         case descriptionTextViewIndexPath:
             return 200
         default:
-            return 47
+            return 50
         }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath == categoryCellIndexPath {
             isPickerViewHidden = !isPickerViewHidden
-            isDatePickerHidden = false
+            isDatePickerHidden = true
         }
         else if indexPath == dateCellIndexPath {
             isDatePickerHidden = !isDatePickerHidden
-            isPickerViewHidden = false
+            isPickerViewHidden = true
         }
         self.view.endEditing(true)
         tableView.beginUpdates()
@@ -117,6 +117,8 @@ class CreateRecordTableViewController: UITableViewController {
         descriptionTextView.delegate = self
         amountTextField.delegate = self
         amountTextField.keyboardType = UIKeyboardType.decimalPad
+        amountTextField.addPaddingViewToTextField()
+        descriptionTextView.textContainerInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
     }
     
     func updateNavigationTitle() {

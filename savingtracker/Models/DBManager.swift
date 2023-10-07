@@ -90,9 +90,11 @@ class DBManager {
     }
     
     public func deleteCategory(id: Int) -> Bool {
-        let query = "DELETE FROM categories WHERE id='\(id)'"
-        let result = _db.execute(sql: query)
-        return result != 0
+        let query1 = "DELETE FROM categories WHERE id = '\(id)'"
+        let query2 = "DELETE FROM records WHERE category_id = '\(id)'"
+        let result1 = _db.execute(sql: query1)
+        let result2 = _db.execute(sql: query2)
+        return result1 != 0 && result2 != 0
     }
     
 }
