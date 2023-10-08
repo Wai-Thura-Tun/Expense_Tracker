@@ -409,16 +409,16 @@
                                 <rect key="frame" x="20" y="134.5" width="335" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="5ML-5Q-8bJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="60"/>
+                                        <rect key="frame" x="10" y="0.0" width="315" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Savings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4Q-Gy-QCf">
-                                                <rect key="frame" x="0.0" y="0.0" width="157" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="147" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9W-dk-RWk">
-                                                <rect key="frame" x="178" y="0.0" width="157" height="60"/>
+                                                <rect key="frame" x="168" y="0.0" width="147" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <color key="textColor" systemColor="systemRedColor"/>
                                                 <nil key="highlightedColor"/>
@@ -431,8 +431,8 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="5ML-5Q-8bJ" secondAttribute="bottom" id="THt-lX-FmU"/>
-                                    <constraint firstItem="5ML-5Q-8bJ" firstAttribute="leading" secondItem="wxq-P2-ntg" secondAttribute="leading" id="bnh-XM-UVf"/>
-                                    <constraint firstAttribute="trailing" secondItem="5ML-5Q-8bJ" secondAttribute="trailing" id="uPl-kj-lbv"/>
+                                    <constraint firstItem="5ML-5Q-8bJ" firstAttribute="leading" secondItem="wxq-P2-ntg" secondAttribute="leading" constant="10" id="bnh-XM-UVf"/>
+                                    <constraint firstAttribute="trailing" secondItem="5ML-5Q-8bJ" secondAttribute="trailing" constant="10" id="uPl-kj-lbv"/>
                                     <constraint firstItem="5ML-5Q-8bJ" firstAttribute="top" secondItem="wxq-P2-ntg" secondAttribute="top" id="vHh-7T-M8n"/>
                                 </constraints>
                             </view>
@@ -479,7 +479,7 @@
                                     </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nY-XA-S9q">
                                         <rect key="frame" x="0.0" y="281" width="335" height="50"/>
-                                        <color key="backgroundColor" systemColor="labelColor"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="jA2-fe-UvI"/>
                                         </constraints>
@@ -1010,7 +1010,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="p07-h5-e9a"/>
+        <segue reference="lrb-wy-iBK"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="category" width="48" height="48"/>

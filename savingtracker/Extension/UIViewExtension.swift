@@ -9,12 +9,12 @@ import Foundation
 import UIKit
 
 extension UIView {
-    func addRadiusAndShadow() {
+    func addRadiusAndShadow(radius: CGFloat, offsetHeight: Int) {
         self.layer.cornerRadius = 5.0
         self.layer.shadowColor = UIColor.gray.cgColor
-        self.layer.shadowOffset = CGSize(width: 0, height: 5)
+        self.layer.shadowOffset = CGSize(width: 0, height: offsetHeight)
         self.layer.shadowOpacity = 0.7
-        self.layer.shadowRadius = 10
+        self.layer.shadowRadius = radius
         self.layer.shadowPath = nil
     }
 }

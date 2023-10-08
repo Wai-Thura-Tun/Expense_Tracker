@@ -38,6 +38,7 @@ class HomeViewController: UIViewController {
         amountTextField.delegate = self
         amountTextField.keyboardType = UIKeyboardType.decimalPad
         saveBtn.layer.cornerRadius = 10
+        savingView.addRadiusAndShadow(radius: 1, offsetHeight: 2)
     }
     
     func updateSavings() {

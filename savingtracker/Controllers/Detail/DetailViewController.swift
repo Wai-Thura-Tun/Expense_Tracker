@@ -35,10 +35,10 @@ class DetailViewController: UIViewController {
     }
     
     func setUp() {
-        savingBtn.addRadiusAndShadow()
-        incomeBtn.addRadiusAndShadow()
-        expenseBtn.addRadiusAndShadow()
-        categoryBtn.addRadiusAndShadow()
+        savingBtn.addRadiusAndShadow(radius: 10, offsetHeight: 5)
+        incomeBtn.addRadiusAndShadow(radius: 10, offsetHeight: 5)
+        expenseBtn.addRadiusAndShadow(radius: 10, offsetHeight: 5)
+        categoryBtn.addRadiusAndShadow(radius: 10, offsetHeight: 5)
     }
     
     func updateAmount() {

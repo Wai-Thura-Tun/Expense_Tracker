@@ -19,12 +19,10 @@ class NotificationManager {
     static func checkForNotificationPermission(tracker: Tracker) {
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.getNotificationSettings { setting in
-            print(setting.authorizationStatus)
             switch setting.authorizationStatus {
             case .notDetermined:
                 notificationCenter.requestAuthorization(options: [.sound, .alert]) { allow, error in
                     if allow  {
-                        print("Allowed")
                         self.scheduleNotification(tracker: tracker)
                         return
                     }
